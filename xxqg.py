@@ -20,10 +20,13 @@ d.app_start("cn.xuexi.android")
 
 #点击要闻
 while True:
+    if d(text="取消").exists():
+        d(text="取消").click()
     element = d(text="要闻")
     if element.exists():
         element.click()
         break
+
 print("--------------------------------------------------------")
 print("开始阅读文章")
 
