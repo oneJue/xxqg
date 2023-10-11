@@ -26,7 +26,6 @@ while True:
     if element.exists():
         element.click()
         break
-
 print("--------------------------------------------------------")
 print("开始阅读文章")
 
@@ -38,7 +37,7 @@ for i in range(1,9):
     if element.exists:
         element.click()
         time.sleep(50 + random.random() * 5)
-        if i == 8:
+        if i == 1:
             print("--------------------------------------------------------")
             print("正在发表观点")
             print("--------------------------------------------------------")
@@ -51,8 +50,8 @@ for i in range(1,9):
             time.sleep(1)
             if d(text="访问异常").exists:
                 time.sleep(30)
-            d.xpath('//*[@resource-id="cn.xuexi.android:id/TOP_LAYER_VIEW_ID"]/android.widget.ImageView[1]').click()
-            break
+            # d.xpath('//*[@resource-id="cn.xuexi.android:id/TOP_LAYER_VIEW_ID"]/android.widget.ImageView[1]').click()
+            # break
             # d.xpath('//*[@resource-id="cn.xuexi.android:id/BOTTOM_LAYER_VIEW_ID"]/android.widget.ImageView[1]').click()
         d.xpath('//*[@resource-id="cn.xuexi.android:id/TOP_LAYER_VIEW_ID"]/android.widget.ImageView[1]').click()
 
@@ -113,6 +112,8 @@ if d(text="").exists():
 
 #获取提示
 def getanswer():
+    d.swipe_ext("up")
+    time.sleep(1)
     d.swipe_ext("up")
     d(text="查看提示").click()
     time.sleep(1)
@@ -324,5 +325,5 @@ elif d(text="开始比赛").exists:
 ###################################################################
 
 time.sleep(1)
-d.app_stop("cn.xuexi.android")
+# d.app_stop("cn.xuexi.android")
 
